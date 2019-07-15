@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>We need access to your camera in order to take photos for ViewFinder!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to access your Photo Library in order to import your photos into ViewFinder! </string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
