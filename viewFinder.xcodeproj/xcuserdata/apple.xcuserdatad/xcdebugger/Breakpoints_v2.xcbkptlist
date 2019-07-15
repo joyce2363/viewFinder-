@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "viewFinder/AddPhotoViewController.swift"
-            timestampString = "584919964.080153"
+            timestampString = "584925580.226773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "viewFinder/AddPhotoViewController.swift"
-            timestampString = "584919964.080755"
+            timestampString = "584925580.226891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "AddPhotoViewController"
             landmarkType = "3">
          </BreakpointContent>

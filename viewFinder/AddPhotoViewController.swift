@@ -15,6 +15,10 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
    
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var captionText: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,10 +30,25 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         imagePicker.sourceType = .savedPhotosAlbum
         
         present(imagePicker, animated: true, completion: nil)
-
     }
     
     
+    
+    @IBAction func savePhotoTapped(_ sender: UIButton) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            photoToSave.caption = captionText.text
+            
+            if let userImage = imageView.image{
+                if let userImageData = userImage.pngData(){
+                    photoToSave.imageData = userImageData
+                }
+            }
+        }
+        
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func cameraTapped(_ sender: Any) {
         imagePicker.sourceType = .camera
         

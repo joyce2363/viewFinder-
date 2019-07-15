@@ -13,7 +13,7 @@
         <!--ViewFinder -->
         <scene sceneID="UdC-WU-rac">
             <objects>
-                <tableViewController id="s9z-8k-4wy" sceneMemberID="viewController">
+                <tableViewController id="s9z-8k-4wy" customClass="PhotoTableViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FQ1-lO-VWo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +69,9 @@
                                 <rect key="frame" x="152" y="527" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save This Photo"/>
+                                <connections>
+                                    <action selector="savePhotoTapped:" destination="Pu8-Xd-OWc" eventType="touchUpInside" id="00z-3Z-lPm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAb-ce-IXo">
                                 <rect key="frame" x="159" y="489" width="56" height="30"/>
@@ -92,6 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="7eX-1O-ofb"/>
                     <connections>
+                        <outlet property="captionText" destination="AC0-q6-xKW" id="WFJ-lS-pkb"/>
                         <outlet property="imageView" destination="RKs-Cp-Wz1" id="DIM-mQ-Hv0"/>
                     </connections>
                 </viewController>
