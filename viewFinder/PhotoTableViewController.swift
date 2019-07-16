@@ -28,14 +28,21 @@ class PhotoTableViewController: UITableViewController {
                 photos = coreDataPhotos
                 tableView.reloadData()
             
-            }
+        }
     }
         
 }
+    override func viewWillAppear(_ animated: Bool) {
+        getPhotos()
+    }
+    
+    
     //WE LEFT OF HEREREREREREREREERERERERERERERERERERERE!
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return photos.count
     }
 
     
@@ -43,9 +50,17 @@ class PhotoTableViewController: UITableViewController {
         
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = "beep de beep bop!"
-
-        cell.imageView?.image = UIImage(named: "camera")
+        let cellPhoto = photos[indexPath.row]
+        cell.textLabel?.text = cellPhoto.caption
+        
+        if let cellPhotoImageData = cellPhoto.imageData{
+            if let cellPhotoImage = UIImage(data:cellPhotoImageData) {
+                cell.imageView?.image = cellPhotoImage
+            }
+        }
+//        cell.textLabel?.text = "beep de beep bop!"
+//
+//        cell.imageView?.image = UIImage(named: "camera")
         return cell
     }
  
